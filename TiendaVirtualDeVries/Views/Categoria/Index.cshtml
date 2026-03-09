@@ -1,0 +1,30 @@
+﻿@model List<TiendaVirtualDeVries.Models.Categoria>
+
+<h2>Lista de Categorias</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Descripcion</td>
+                <td>
+                    @if (!String.IsNullOrEmpty(item.Nombre))
+                    {
+                        <span class="text-success">Activa</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">Sin nombre</span>
+                    }
+                </td>
+            </tr>
+}
